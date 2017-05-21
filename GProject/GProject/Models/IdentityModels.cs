@@ -10,6 +10,7 @@ namespace GProject.Models
     public class ApplicationUser : IdentityUser
     {
         public string Hometown { get; set; }
+        public string Registration { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {

@@ -7,12 +7,17 @@ namespace GProject.Models
     // Modelos retornados pelas ações AccountController.
     public class ExternalLoginConfirmationViewModel
     {
+    
         [Required]
         [Display(Name = "Email")]
         public string Email { get; set; }
 
         [Display(Name = "Cidade natal")]
         public string Hometown { get; set; }
+
+        [Required]
+        [Display(Name = "Matricula")]
+        public string Registration { get; set; }
     }
 
     public class ExternalLoginListViewModel
@@ -87,6 +92,11 @@ namespace GProject.Models
 
         [Display(Name = "Cidade natal")]
         public string Hometown { get; set; }
+
+        [Required]
+        [StringLength(100, ErrorMessage = "O {0} deve ter pelo menos {2} caracteres.", MinimumLength = 8)]
+        [Display(Name = "Matricula")]
+        public string Registration { get; set; }
     }
 
     public class ResetPasswordViewModel

@@ -8,5 +8,6 @@ namespace GProject.Models
     public class GetViewModel
     {
         public string Hometown { get; set; }
+        public string Registration { get; set; }
     }
 }
