@@ -97,6 +97,7 @@ namespace GProject.Models
         [StringLength(100, ErrorMessage = "O {0} deve ter pelo menos {2} caracteres.", MinimumLength = 8)]
         [Display(Name = "Matricula")]
         public string Registration { get; set; }
+
     }
 
     public class ResetPasswordViewModel
