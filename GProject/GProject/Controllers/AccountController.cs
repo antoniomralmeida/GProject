@@ -164,6 +164,16 @@ namespace GProject.Controllers
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Hometown = model.Hometown, Registration = model.Registration};
+                ApplicationDbContext context = new ApplicationDbContext();
+                if (context.Users.ToList().Count == 0)
+                {
+                    user.Profile = profile.Admin;
+                }
+                else
+                {
+                    user.Profile = profile.User;
+                }
+
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
