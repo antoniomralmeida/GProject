@@ -5,6 +5,19 @@
     {
     @Html.AntiForgeryToken()
 
+    <div class="col-md-4" role="group" aria-label="...">
+        <div class="col-md-4" role="group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Administrador
+                    <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="#">Dropdown link</a></li>
+                <li><a href="#">Dropdown link</a></li>
+            </ul>
+        </div>
+    </div>
+
     <ul class="nav navbar-nav navbar-right">
         <li>
             @Html.ActionLink("Olá " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: new { area = "" }, htmlAttributes: new { title = "Manage" })
