@@ -25,9 +25,33 @@
                     <li>@Html.ActionLink("Início", "Index", "Home", new { area = "" }, null)</li>
                     <li>@Html.ActionLink("API", "Index", "Help", new { area = "HelpPage" }, null)</li>
                 </ul>
+
                 
                 @Html.Partial("_LoginPartial")
+                <div class="col-md-4" role="group" aria-label="...">
+                    <div class="col-md-4" role="group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Ferramentas
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Aprova Finalização de Atividade", "ApproveFinalizationActivities", "Home", new { area = "" }, null)</li>
+                            <li>@Html.ActionLink("Atribuir atividades", "AssignActivities", "Home", new { area = "" }, null)</li>
+                            <li>@Html.ActionLink("Cadastra Gerente Projeto", "CadGerente", "Home", new { area = "" }, null)</li>
+                            <li>@Html.ActionLink("Criar projeto", "CreateProject", "Home", new { area = "" }, null)</li>
+                            <li>@Html.ActionLink("Finalizar atividade", "EndActivity", "Home", new { area = "" }, null)</li>
+                            <li>@Html.ActionLink("Gerenciar Atividades", "ManageActivities", "Home", new { area = "" }, null)</li>
+                            <li>@Html.ActionLink("Executar atividades", "PerformActivities", "Home", new { area = "" }, null)</li>
+                            <li>@Html.ActionLink("Informa impedimento de atividade", "ReportsActivityImpediment", "Home", new { area = "" }, null)</li>
+                            <li>@Html.ActionLink("Informa duração da atividade", "ReportsDurationActivity", "Home", new { area = "" }, null)</li>
+                            <li>@Html.ActionLink("Selecionar membro para projeto", "SelectMemberProject", "Home", new { area = "" }, null)</li>
+                            <li>@Html.ActionLink("Acompanhar atividades", "TrackActivities", "Home", new { area = "" }, null)</li>
+                            <li>@Html.ActionLink("Visualizar projeto", "ViewProject", "Home", new { area = "" }, null)</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
+
         </div>
     </div>
     <div class="container body-content">
