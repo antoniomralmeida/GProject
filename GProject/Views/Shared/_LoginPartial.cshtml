@@ -14,6 +14,9 @@
             <ul class="dropdown-menu">
                 <li><a href="#">Dropdown link</a></li>
                 <li><a href="#">Dropdown link</a></li>
+                <li><a href="#">Dropdown link</a></li>
+                <li><a href="#">Dropdown link</a></li>
+                <li><a href="#">Dropdown link</a></li>
             </ul>
         </div>
     </div>
@@ -21,6 +24,7 @@
     <ul class="nav navbar-nav navbar-right">
         <li>
             @Html.ActionLink("Olá " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: new { area = "" }, htmlAttributes: new { title = "Manage" })
+            
         </li>
         <li><a href="javascript:sessionStorage.removeItem('accessToken');$('#logoutForm').submit();">Fazer logoff</a></li>
     </ul>

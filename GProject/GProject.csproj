@@ -240,7 +240,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MeController.cs" />
-    <Compile Include="Controllers\PerfilAdminController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -340,8 +339,18 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\PerfilAdmin\Index.cshtml" />
     <Content Include="Views\Home\CadGerente.cshtml" />
+    <Content Include="Views\Home\CreateProject.cshtml" />
+    <Content Include="Views\Home\AssignActivities.cshtml" />
+    <Content Include="Views\Home\ManageActivities.cshtml" />
+    <Content Include="Views\Home\SelectMemberProject.cshtml" />
+    <Content Include="Views\Home\ApproveFinalizationActivities.cshtml" />
+    <Content Include="Views\Home\TrackActivities.cshtml" />
+    <Content Include="Views\Home\ViewProject.cshtml" />
+    <Content Include="Views\Home\EndActivity.cshtml" />
+    <Content Include="Views\Home\ReportsDurationActivity.cshtml" />
+    <Content Include="Views\Home\PerformActivities.cshtml" />
+    <Content Include="Views\Home\ReportsActivityImpediment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
