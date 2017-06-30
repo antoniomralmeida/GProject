@@ -12,5 +12,9 @@ namespace GProject.Controllers
         {
             return View();
         }
+        public ActionResult CadGerente()
+        {
+            return View();
+        }
     }
 }
