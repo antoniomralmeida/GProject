@@ -1220,7 +1220,8 @@ window.Modernizr = (function( window, document, undefined ) {
       }
 
       /*--------------------------------------------------------------------------*/
-
+      
+        
       /**
        * Shivs the given document.
        * @memberOf html5

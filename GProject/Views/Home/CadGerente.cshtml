@@ -3,27 +3,62 @@
     ViewBag.Title = "CadGerente";
 }
 
+<link type="text/css" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet">
+<link type="text/css" href="/resources/demos/style.css">
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<style>
+    #sortable1, #sortable2 {
+        border: 1px solid #eee;
+        width: 142px;
+        min-height: 20px;
+        list-style-type: none;
+        margin: 0;
+        padding: 5px 0 0 0;
+        float: left;
+        margin-right: 10px;
+    }
+
+        #sortable1 li, #sortable2 li {
+            margin: 0 5px 5px 5px;
+            padding: 5px;
+            font-size: 1.2em;
+            width: 120px;
+        }
+</style>
+
+
+
 
 <h2>Gerenciar Gerentes de Projeto</h2>
 
 <div class="jumbotron">
-<h1>ASP.NET</h1>
-<ul id="sortable1" class="connectedSortable">
-    <li class="ui-state-default">Item 1</li>
-    <li class="ui-state-default">Item 2</li>
-    <li class="ui-state-default">Item 3</li>
-    <li class="ui-state-default">Item 4</li>
-    <li class="ui-state-default">Item 5</li>
-</ul>
+    <ul id="sortable1" class="connectedSortable">
+        <li class="ui-state-default">Usuario 1</li>
+        <li class="ui-state-default">Usuario 2</li>
+        <li class="ui-state-default">Usuario 3</li>
+        <li class="ui-state-default">Usuario 4</li>
+        <li class="ui-state-default">Usuario 5</li>
+    </ul>
 
-<ul id="sortable2" class="connectedSortable">
-    <li class="ui-state-highlight">Item 1</li>
-    <li class="ui-state-highlight">Item 2</li>
-    <li class="ui-state-highlight">Item 3</li>
-    <li class="ui-state-highlight">Item 4</li>
-    <li class="ui-state-highlight">Item 5</li>
-</ul>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg"> Salvar &raquo;</a></p>
+    <ul id="sortable2" class="connectedSortable">
+        <li class="ui-state-highlight">Item 1</li>
+        <li class="ui-state-highlight">Item 2</li>
+        <li class="ui-state-highlight">Item 3</li>
+        <li class="ui-state-highlight">Item 4</li>
+        <li class="ui-state-highlight">Item 5</li>
+    </ul>
+    
 </div>
 
 
+<script type="text/javascript"> 
+    $(function () {
+        $("#sortable1, #sortable2").sortable({
+        connectWith: ".connectedSortable"
+        }).disableSelection();
+    });
+
+</script>

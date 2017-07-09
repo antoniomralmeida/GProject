@@ -1,4 +1,4 @@
-﻿x'<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -8,6 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+
+    
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -23,12 +26,12 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Início", "Index", "Home", new { area = "" }, null)</li>
-                    <li>@Html.ActionLink("API", "Index", "Help", new { area = "HelpPage" }, null)</li>
+                    <li>@Html.DropDownListFor(model => model.tipo, listItems, "-- Select Status --")</li>
                 </ul>
 
                 
                 @Html.Partial("_LoginPartial")
-                <div class="col-md-4" role="group" aria-label="...">
+                <div class="col-md-4 " role="group" aria-label="..." >
                     <div class="col-md-4" role="group">
                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Ferramentas
@@ -63,7 +66,7 @@
         </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
+    
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("Scripts", required: false)
 </body>
