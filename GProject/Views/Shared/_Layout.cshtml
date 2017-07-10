@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <title>@ViewBag.Title - Meu aplicativo ASP.NET</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
@@ -13,6 +14,7 @@
     
 </head>
 <body>
+
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -25,18 +27,15 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Início", "Index", "Home", new { area = "" }, null)</li>
-                    <li>@Html.DropDownListFor(model => model.tipo, listItems, "-- Select Status --")</li>
-                </ul>
-
-                
-                @Html.Partial("_LoginPartial")
-                <div class="col-md-4 " role="group" aria-label="..." >
-                    <div class="col-md-4" role="group">
-                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Ferramentas
+                   <!-- <li>@Html.ActionLink("Início", "Index", "Home", new { area = "" }, null)</li> -->
+                    
+                  
+                        
+                    <li>
+                        <a class="navbar-collapse collapse" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Menu
                             <span class="caret"></span>
-                        </button>
+                        </a>
                         <ul class="dropdown-menu">
                             <li>@Html.ActionLink("Aprova Finalização de Atividade", "ApproveFinalizationActivities", "Home", new { area = "" }, null)</li>
                             <li>@Html.ActionLink("Atribuir atividades", "AssignActivities", "Home", new { area = "" }, null)</li>
@@ -51,8 +50,15 @@
                             <li>@Html.ActionLink("Acompanhar atividades", "TrackActivities", "Home", new { area = "" }, null)</li>
                             <li>@Html.ActionLink("Visualizar projeto", "ViewProject", "Home", new { area = "" }, null)</li>
                         </ul>
-                    </div>
-                </div>
+
+
+                    </li>
+                </ul>
+
+                
+                @Html.Partial("_LoginPartial")
+
+               
             </div>
 
         </div>
@@ -70,4 +76,11 @@
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("Scripts", required: false)
 </body>
+
+    <script>
+    $( "#casa" ).click(function() {
+      $( this ).slideUp();
+    });
+    </script>
+
 </html>
