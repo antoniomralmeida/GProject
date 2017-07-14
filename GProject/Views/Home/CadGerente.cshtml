@@ -46,7 +46,7 @@
             <li class="ui-state-default">Usuario 5</li>
         </ul>
 
-        <ul id="sortable2" class="connectedSortable" >
+        <ul id="sortable2" class="connectedSortable">
             <li class="ui-state-highlight">Item 1</li>
             <li class="ui-state-highlight">Item 2</li>
             <li class="ui-state-highlight">Item 3</li>
@@ -58,23 +58,10 @@
 
 
 <script type="text/javascript"> 
-    /*$(function () {
+    $(function () {
         $("#sortable1, #sortable2").sortable({
         connectWith: ".connectedSortable"
         }).disableSelection();
-    });*/
-
-    $(function () {
-        $("#sortable1, #sortable2").sortable({
-            connectWith: '.connectedSortable',
-            receive: function (event, ui) {
-                var nivel = ui.item.parent().parent().attr('id');
-                alert('Posição: ' + ui.item.index() + ' nivel:' + nivel);
-
-                /*alert("[" + this.id + "] received [" + ui.item.html() + "] from [" + ui.sender.attr("id") + "] ui-id ["+$(ui.item).attr("id")+"]");*/
-            }
-        });
     });
-   
 
 </script>
