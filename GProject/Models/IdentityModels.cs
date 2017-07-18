@@ -15,12 +15,14 @@ namespace GProject.Models
         public string Hometown { get; set; }
         public string Registration { get; set; }
         public profile Profile { get; set; }
+        public string Profile2 { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Observe que o authenticationType deve corresponder àquele definido em CookieAuthenticationOptions.AuthenticationType
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
             // Adicionar declarações de usuário personalizado aqui
+            userIdentity.AddClaim(new Claim("Profile", this.Profile2.ToString()));
             return userIdentity;
         }
     }
