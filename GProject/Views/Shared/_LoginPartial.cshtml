@@ -1,6 +1,7 @@
 ﻿@using Microsoft.AspNet.Identity
-@if (Request.IsAuthenticated)
 @using ProgramName.Models.Extensions
+@if (Request.IsAuthenticated)
+
 {
     using (Html.BeginForm("LogOff", "Account", new { area = "" }, FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
     {
@@ -11,7 +12,9 @@
     <ul class="nav navbar-nav navbar-right">
         <li>
             @Html.ActionLink("Olá " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: new { area = "" }, htmlAttributes: new { title = "Manage" })
-            
+            @Html.ActionLink("Olá " + User.Identity.GetUserProfile2() + "!", "Index", "Manage", routeValues: new { area = "" }, htmlAttributes: new { title = "Manage" })
+
+ 
         </li>
         <li><a href="javascript:sessionStorage.removeItem('accessToken');$('#logoutForm').submit();">Fazer logoff</a></li>
     </ul>

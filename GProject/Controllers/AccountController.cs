@@ -155,6 +155,39 @@ namespace GProject.Controllers
         }
 
         //
+        // POST: /Account/CProfile
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> CProfile(RegisterViewModel model)
+
+
+
+        {
+            ApplicationDbContext context = new ApplicationDbContext();
+
+            ApplicationUser myuser = context.Users.SingleOrDefault(user => user.Email == model.Email);
+
+            //var user = new ApplicationUser {  Email = model.Email };
+
+            myuser.Profile = profile.Manager;
+
+            var result = await UserManager.UpdateAsync(myuser);
+            if (result.Succeeded)
+            {
+                await SignInManager.SignInAsync(myuser, isPersistent: false, rememberBrowser: false);
+
+                return RedirectToAction("Index", "Home");
+            }
+            AddErrors(result);
+
+            // Se chegamos até aqui, algo falhou, reexibir formulário
+            return View(model);
+
+        }
+
+
+        //
         // POST: /Account/Register
         [HttpPost]
         [AllowAnonymous]
@@ -173,6 +206,7 @@ namespace GProject.Controllers
                 {
                     user.Profile = profile.User;
                 }
+
 
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
